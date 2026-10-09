@@ -1,0 +1,177 @@
+10.09 4:44 PM
+Index.html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal - Study & AI Doubt Solver</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #1a73e8;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 20px auto;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 5px;
+        }
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .video-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        .video-info {
+            padding: 15px;
+        }
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        /* AI Doubt Solver Section */
+        .ai-solver-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .ai-solver-card textarea {
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: vertical;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .ai-solver-card button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .ai-solver-card button:hover {
+            background-color: #1557b0;
+        }
+        .ai-response {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            border-radius: 4px;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EduPortal Study Center</h1>
+        <p>Learn Concepts & Solve Doubts Instantly</p>
+    </header>
+    <div class="container">
+        <!-- Video Section -->
+        <h2 class="section-title">Educational Videos</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <!-- Video 1 Embed Code -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Class 9 Physics - Motion & Laws</h3>
+                    <p>Basic fundamentals of Physics for Class 9 exams and Foundation.</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <!-- Video 2 Embed Code -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Class 9 Mathematics - Algebra Basics</h3>
+                    <p>Complete guide to linear equations and foundational math.</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <!-- Video 3 Embed Code -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h3>Chemistry Concepts - Atomic Structure</h3>
+                    <p>Learn core concepts for exams and competitive foundations.</p>
+                </div>
+            </div>
+        </div>
+        <!-- AI Doubt Solver Section -->
+        <h2 class="section-title">AI Doubt Assistant</h2>
+        <div class="ai-solver-card">
+            <p style="margin-bottom: 10px;">Apna koi bhi sawal/doubt yahan likhein:</p>
+            <textarea id="userDoubt" placeholder="E.g., What is Newton's First Law of Motion?"></textarea>
+            <button onclick="solveDoubt()">Solve Doubt</button>
+            <div id="aiResponse" class="ai-response"></div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 EduPortal. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function solveDoubt() {
+            const query = document.getElementById('userDoubt').value.trim();
+            const responseBox = document.getElementById('aiResponse');
+            if (query === "") {
+                alert("Kripya pehle apna doubt yahan likhein!");
+                return;
+            }
+            responseBox.style.display = "block";
+                responseBox.innerHTML = `<strong>AI Assistant Answer:</strong><br> Aapka sawal: "<em>${query}</em>"<br><br> (Yah ek interactive portal hai. Real-time dynamic response ke liye aap API integrate kar sakte hain.)`;
+        }
+    </script>
+</body>
+</html>
+
